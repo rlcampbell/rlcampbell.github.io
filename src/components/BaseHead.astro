@@ -18,6 +18,10 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 <title>{siteTitle}</title>
 
+{/* Font Preloading for Critical Fonts */}
+<link rel="preload" href="/src/assets/fonts/SF-Pro-Rounded-Regular.latin.base.ttf" as="font" type="font/ttf" crossorigin />
+<link rel="preload" href="/src/assets/fonts/SF-Pro-Rounded-Medium.latin.base.ttf" as="font" type="font/ttf" crossorigin />
+
 {/* Icons */}
 <link href="/icon.svg" rel="icon" type="image/svg+xml" />
 {
