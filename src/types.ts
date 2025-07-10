@@ -79,7 +79,6 @@ export interface Summary {
 	value: string;
 }
 
-export type AdmonitionType = "tip" | "note" | "important" | "caution" | "warning";
 
 export interface Badge {
   variant?:
