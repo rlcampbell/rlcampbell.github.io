@@ -1,5 +1,4 @@
 import fs from "node:fs";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
@@ -21,7 +20,6 @@ export default defineConfig({
       nesting: true,
     }),
     sitemap(),
-    mdx(),
     robotsTxt(),
     webmanifest({
       // See: https://github.com/alextim/astro-lib/blob/main/packages/astro-webmanifest/README.md

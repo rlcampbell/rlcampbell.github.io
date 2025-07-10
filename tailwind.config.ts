@@ -96,9 +96,24 @@ export default {
         "special-light": "var(--theme-special-light)",
       },
       fontFamily: {
-        // Add any custom fonts here
-        sans: ["SFProRounded", ...fontFamily.sans],
-        serif: ["CascadiaCode", ...fontFamily.serif],
+        // Using system fonts for optimal performance
+        sans: [
+          "-apple-system", 
+          "BlinkMacSystemFont", 
+          "'Segoe UI'", 
+          "Roboto", 
+          "'Helvetica Neue'", 
+          "Arial", 
+          "sans-serif",
+          "'Apple Color Emoji'",
+          "'Segoe UI Emoji'",
+          "'Segoe UI Symbol'"
+        ],
+        serif: [
+          "'Times New Roman'",
+          "Times", 
+          "serif"
+        ],
       },
       transitionProperty: {
         height: "height",

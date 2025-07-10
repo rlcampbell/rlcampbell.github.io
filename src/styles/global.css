@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* Custom fonts temporarily disabled for performance testing
 @font-face {
 	font-family: "SFProRounded";
 	src: url("../assets/fonts/SF-Pro-Rounded-Regular.latin.base.ttf") format("truetype");
@@ -74,6 +74,7 @@
 	font-style: normal;
 	font-display: swap;
 }
+*/
 
 @layer base {
 	:root,
