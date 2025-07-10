@@ -6,10 +6,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "biome lint .",
-    "format": "pnpm run format:code && pnpm run format:imports",
-    "format:code": "biome format . --write && prettier -w \"**/*\" \"!**/*.{md,mdx}\" --ignore-unknown --cache",
-    "format:imports": "biome check --formatter-enabled=false --write",
+    "format": "prettier -w \"**/*\" \"!**/*.{md,mdx}\" --ignore-unknown --cache",
     "check": "astro check"
   },
   "dependencies": {
@@ -23,10 +20,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "@biomejs/biome": "^1.9.4",
-    "@iconify-json/hugeicons": "^1.2.3",
     "@iconify-json/mdi": "^1.2.2",
-    "@iconify-json/solar": "^1.2.2",
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
     "prettier": "^3.4.2",
@@ -37,7 +31,6 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@biomejs/biome",
       "esbuild"
     ]
   },
