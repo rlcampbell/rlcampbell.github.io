@@ -1,6 +1,64 @@
 ---
 import { Icon } from "astro-icon/components";
 
+// CSS for tooltips
+const tooltipStyles = `
+  .tooltip {
+    position: relative;
+  }
+  
+  .tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  
+  .tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  
+  .tooltip:hover::after,
+  .tooltip:hover::before {
+    opacity: 1;
+    visibility: visible;
+  }
+`;
+
+// Tooltip messages for each platform
+const tooltipMessages = {
+  LinkedIn: "Professional networking",
+  Facebook: "Personal updates",
+  Github: "Code repositories",
+  "Twitter/X": "Quick thoughts",
+  Strava: "Running & cycling",
+  Athlinks: "Race results",
+  Instagram: "Photos & stories",
+};
+
 /** 
 	Uses https://www.astroicon.dev/getting-started/
 	Find icons via guide: https://www.astroicon.dev/guides/customization/#open-source-icon-sets
@@ -23,6 +81,11 @@ const socialLinks: {
     name: "mdi:facebook",
   },
   {
+    friendlyName: "Instagram",
+    link: "https://www.instagram.com/rogerlcampbell/",
+    name: "mdi:instagram",
+  },
+  {
     friendlyName: "Github",
     link: "https://github.com/rlcampbell",
     name: "mdi:github",
@@ -38,9 +101,9 @@ const socialLinks: {
     name: "mdi:strava",
   },
   {
-    friendlyName: "Instagram",
-    link: "https://www.instagram.com/rogerlcampbell/",
-    name: "mdi:instagram",
+    friendlyName: "Athlinks",
+    link: "https://www.athlinks.com/athletes/110929601",
+    name: "mdi:run",
   },
 ];
 ---
