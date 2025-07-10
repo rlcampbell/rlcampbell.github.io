@@ -20,9 +20,10 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 
 {/* Font Preloading disabled while using system fonts */}
 
-{/* Google Analytics */}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8BYYDJ1F23"></script>
-<script>
+{/* Google Analytics - DNS prefetch for performance */}
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-8BYYDJ1F23"></script>
+<script defer>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());

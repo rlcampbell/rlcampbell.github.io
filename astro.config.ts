@@ -1,4 +1,3 @@
-import fs from "node:fs";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
@@ -70,7 +69,6 @@ export default defineConfig({
     build: {
       sourcemap: true, // Source maps generation
     },
-    plugins: [rawFonts([".ttf", ".woff"])],
   },
   env: {
     schema: {
@@ -96,19 +94,3 @@ export default defineConfig({
     host: true,
   },
 });
-
-function rawFonts(ext: string[]) {
-  return {
-    name: "vite-plugin-raw-fonts",
-    // @ts-expect-error:next-line
-    transform(_, id) {
-      if (ext.some((e) => id.endsWith(e))) {
-        const buffer = fs.readFileSync(id);
-        return {
-          code: `export default ${JSON.stringify(buffer)}`,
-          map: null,
-        };
-      }
-    },
-  };
-}
