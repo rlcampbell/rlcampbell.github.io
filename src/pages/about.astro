@@ -2,38 +2,45 @@
 import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
-	description: "I'm a starter theme for Astro.build",
-	title: "About",
+  description: "Some professional and personal info about Roger Campbell",
+  title: "About",
 };
 ---
 
 <PageLayout meta={meta}>
-
-	<h1 class="title mb-6">About</h1>
-	<div class="prose prose-citrus max-w-none text-gray-800 dark:text-gray-200">
-		<p>
-			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
-			website.
-		</p>
-		<p>Here are my some of my awesome built in features:</p>
-		<ul class="list-inside list-disc" role="list">
-			<li>I'm ultra fast as I'm a static site</li>
-			<li>I'm fully responsive</li>
-			<li>I come with a light and dark mode</li>
-			<li>I'm easy to customise and add additional content</li>
-			<li>I have Tailwind CSS styling</li>
-			<li>Shiki code syntax highlighting</li>
-			<li>Satori for auto generating OG images for blog posts</li>
-		</ul>
-		<p>
-			Clone or fork my <a
-				aria-label="github repository"
-				class="citrus-link inline-block"
-				href="https://github.com/artemkutsan/astro-citrus"
-				rel="noreferrer"
-				target="_blank">repo</a
-			> if you like me!
-		</p>
-	</div>
-
+  <h2 class="title mb-6">Professional Summary</h2>
+  <div class="prose prose-citrus max-w-none text-gray-800 dark:text-gray-200">
+    <p>
+      I have been building software for a very long time. Not quite back to the
+      days of punch cards, but I did write some programs with BASIC on an Apple
+      II (that was in high school) and the first version of Turbo Pascal on a
+      Compaq portable with dual floppy drives. Of course, very little of that is
+      relevant today except for some algorithms and understanding the
+      foundations of what later became the internet.
+    </p>
+    <p>
+      I'd like to think much of what I have done in the last couple of decades
+      is useful experience. One benefit of getting older is we gain some insight
+      into both ourselves and other people. That, along with general problem
+      solving skills are probably the most valuable of what I have to offer. It
+      is sort of a golden age now where we have AI that can speed up and fill in
+      the gaps for our coding deficiencies. More recently, some of the technical
+      bits that I am interested in or have worked on include:
+    </p>
+    <ul class="list-inside list-disc" role="list">
+      <li>I'm ultra fast as I'm a static site</li>
+      <li>I'm fully responsive</li>
+      <li>I come with a light and dark mode</li>
+      <li>I'm easy to customise and add additional content</li>
+      <li>I have Tailwind CSS styling</li>
+      <li>Shiki code syntax highlighting</li>
+      <li>Satori for auto generating OG images for blog posts</li>
+    </ul>
+    <h2 class="title mb-6">Personal Interests</h2>
+    <p>
+      If curious or just want to verify that I am (mostly) human, I also have
+      some personal interests.
+    </p>
+    <h2 class="title mb-6">About This Site</h2>
+  </div>
 </PageLayout>

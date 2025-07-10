@@ -10,7 +10,6 @@ import { siteConfig } from "./src/site.config";
 
 // Remark plugins
 import remarkDirective from "remark-directive"; /* handle ::: directives as nodes */
-import { remarkReadingTime } from "./src/plugins/remark-reading-time";
 
 // Rehype plugins
 import rehypeExternalLinks from "rehype-external-links";
@@ -80,7 +79,7 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: false,
 
-    remarkPlugins: [remarkReadingTime, remarkDirective],
+    remarkPlugins: [remarkDirective],
     remarkRehype: {
       footnoteLabelProperties: {
         className: [""],
