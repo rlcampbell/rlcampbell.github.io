@@ -1,17 +1,6 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
 import SocialList from "@/components/SocialList.astro";
-import PostPreview from "@/components/blog/PostPreview.astro";
-import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
-import { collectionDateSort } from "@/utils/date";
-
-// Posts
-const MAX_POSTS = 10;
-const allPosts = await getAllPosts();
-const allPostsByDate = allPosts
-  .sort(collectionDateSort)
-  .slice(0, MAX_POSTS) as CollectionEntry<"post">[];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
@@ -47,15 +36,22 @@ const allPostsByDate = allPosts
         Introducing Roger!
       </span>
       <p class="mt-4 mb-4 text-lg font-medium text-gray-800 dark:text-gray-200">
-        Hi, I’m a software developer from Albuquerque, New Mexico. I can be
-        contacted by email as rogerc@ at this or other domains that I control.
-        If you don't know me, email is the best way to get in touch. I do like
-        to talk to people about building and using software. At the same time, I
-        am working on professional projects, having coffee with friends, mowing
-        the lawn and occasionally traveling with my wife and family. So, no
-        promises, but I'll try to get back to you. Your chances of getting a
-        response are greatly increased if you provide your name, phone number
-        and a few details about what you'd like to discuss.
+        Hi, I’m a software developer based in Albuquerque, New Mexico. You can
+        reach me by email at rogerc@ — either at this domain or another that I
+        manage.
+      </p>
+      <p class="mt-4 mb-4 text-lg font-medium text-gray-800 dark:text-gray-200">
+        If we haven’t met, email is the best way to get in touch. I’m always
+        happy to talk about building and using software. I am also interested in
+        creating new businesses. That said, I also spend time on professional
+        projects, catching up with friends over coffee, mowing the lawn, and
+        occasionally traveling with my wife and family — so I can’t always
+        respond right away.
+      </p>
+      <p class="mt-4 mb-4 text-lg font-medium text-gray-800 dark:text-gray-200">
+        You’ll have a much better chance of hearing back from me if you include
+        your name, phone number, and a few details about what you’d like to
+        discuss.
       </p>
       <p class="mt-4 mb-4 text-lg font-medium text-gray-800 dark:text-gray-200">
         I am not very active on social media, but feel free to ...
@@ -64,22 +60,6 @@ const allPostsByDate = allPosts
         <SocialList />
       </div>
     </div>
-  </section>
-
-  <!-- Posts Section -->
-  <section aria-label="Blog post list" class="'mt-[-100vh] pt-[100vh]'">
-    <h2 class="title mb-6 text-xl text-accent-two">
-      <a href="/posts/">Posts</a>
-    </h2>
-    <ul class="space-y-4 md:space-y-2" role="list">
-      {
-        allPostsByDate.map((p) => (
-          <li class="gap-2 sm:grid-cols-[auto_1fr]">
-            <PostPreview post={p} />
-          </li>
-        ))
-      }
-    </ul>
   </section>
 
   <!-- Debug -->
