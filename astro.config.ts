@@ -9,6 +9,7 @@ import { siteConfig } from "./src/site.config";
 
 // https://astro.build/config
 export default defineConfig({
+  trailingSlash: "never",
   image: {
     domains: ["webmention.io"],
   },
